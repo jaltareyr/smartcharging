@@ -124,7 +124,7 @@ def SendEmails():
         db = mysql.connector.connect(
             host="localhost" ,
             user="root" ,
-            passwd="mysql@123" ,
+            passwd="your_password" ,
             database='EVCS'
         )
         cursor = db.cursor(dictionary=True)
@@ -139,7 +139,7 @@ def SendEmails():
 
         s = smtplib.SMTP('smtp.gmail.com' , 587)
         s.starttls()
-        s.login("leoronaldo578@gmail.com","steam@123")
+        s.login("youremailid","yourpassword")
         message = """From: BTech Project Group 2 <{}>
 To: User {} <{}>
 Subject: Final Time-slot for EV charging {}
@@ -148,10 +148,10 @@ Dear EV user,
     You have been allotted a charging station {}, on {} at {}.
 Please report 10 minutes before your timeslot for avoiding delays.
 Happy EVing...
-            """.format("leoronaldo578@gmail.com" ,user_id, email_id , datetime.now() ,station_id, day,relation_list[start-1],)
+            """.format("youremailid" ,user_id, email_id , datetime.now() ,station_id, day,relation_list[start-1],)
         try :
             # sending the mail
-            s.sendmail("leoronaldo578@gmail.com" , email_id , message)
+            s.sendmail("youremailid" , email_id , message)
             print("Email Sent!")
         except :
             print("Unable to Send Email")
@@ -168,7 +168,7 @@ def Priority(cars, SoC_min = 15):
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
@@ -213,7 +213,7 @@ def current_assignment() :
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
@@ -351,7 +351,7 @@ def OpenSlots(slots_for_days=1 , year=now.year , month=now.month , day=now.day) 
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database="EVCS"
     )
 
@@ -409,7 +409,7 @@ def Schedule_flexible(date = '2022-04-26'):
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
@@ -490,7 +490,7 @@ def current_assignment_flexible(timeslot):
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
@@ -635,7 +635,7 @@ def demo() :
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
@@ -757,7 +757,7 @@ def demo_normal():
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)

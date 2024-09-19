@@ -15,7 +15,7 @@ def Schedule() :
     db = mysql.connector.connect(
         host="localhost" ,
         user="root" ,
-        passwd="mysql@123" ,
+        passwd="yourpassword" ,
         database='EVCS'
     )
     cursor = db.cursor(dictionary=True)
